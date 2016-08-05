@@ -48,8 +48,8 @@ var App = React.createClass({
 				// console.log(result[i].description);
 				populatedDescriptions.push(result[i].description);
 			}
-			console.log(populatedNames);
-			console.log(populatedDescriptions);
+			// console.log(populatedNames);
+			// console.log(populatedDescriptions);
 			this.setState({
 				names: populatedNames,
 				description: populatedDescriptions
@@ -106,7 +106,7 @@ var PortfolioItem = React.createClass({
 		var gradient = gradients[randomNum];
 		// craft the css
 		var gradientStatement = "linear-gradient(to bottom right," + gradient.first + "," + gradient.second +")";
-		console.log(gradientStatement);
+		// console.log(gradientStatement);
 		var gradientStyle = {backgroundImage: gradientStatement};
 		// var gradientStyle = "background-image: linear-gradient(to bottom right,#56ab2f,#a8e063);";
 		return (
