@@ -74,6 +74,7 @@ var App = React.createClass({
 
 			if(porfolioItemsForOneRow.length === 3) {
 				portfolioRowsArr.push(<PortfolioRow items={porfolioItemsForOneRow} />);
+				portfolioRowsArr.push(<hr />);
 				porfolioItemsForOneRow = [];
 			}
 		}
@@ -110,11 +111,9 @@ var PortfolioItem = React.createClass({
 		// var gradientStyle = "background-image: linear-gradient(to bottom right,#56ab2f,#a8e063);";
 		return (
 			<div className="col-md-4">
-				
 				<img src="images/github.png" className="img-responsive repoLogo image-center" style={gradientStyle}/> 
                 <h2 className="text-center title">{this.props.title}</h2> 
                 <p className="description">{this.props.desc}</p>
-                
 			</div>
 		);
 	}
