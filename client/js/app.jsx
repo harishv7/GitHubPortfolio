@@ -1,3 +1,4 @@
+var gitHubUserName = "harishv7";
 var gradients = [{
 	first: '#56ab2f',
 	second: '#a8e063'
@@ -30,6 +31,16 @@ var gradients = [{
 	second: '#3CD3AD'
 }];
 
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
 var App = React.createClass({
 	getInitialState() {
 	    return {
@@ -45,7 +56,17 @@ var App = React.createClass({
 		var populatedDescriptions = [];
 		var populatedHomepages = [];
 		var populatedRepoUrls = [];
-		this.serverRequest = $.get("https://api.github.com/users/harishv7/repos", function (result) {
+
+		// check if there is a query param for the username
+		var currentUrl = window.location.href;
+		var username = getParameterByName('name', currentUrl);
+
+		if(username != null && username != "" && username != " ") {
+			gitHubUserName = username;
+		}
+
+		var apiUrl = "https://api.github.com/users/" + gitHubUserName + "/repos";
+		this.serverRequest = $.get(apiUrl, function (result) {
 			for (var i = 0; i < result.length; i++) { 
 				populatedNames.push(result[i].name);
 				populatedDescriptions.push(result[i].description);
