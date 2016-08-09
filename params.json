@@ -1,0 +1,6 @@
+{
+  "name": "Githubportfolio",
+  "tagline": "This is a React-based application that fetches all your public repositories and curates them into a nice webpage for you.",
+  "body": "# GitHubPortfolio\r\n\r\nThis is a React-based application that fetches all your public repositories and curates them into a nice webpage for you. The repos currently come with GitHub logo placeholders with randomly generated gradient backgrounds.\r\n\r\nTo see an example, visit: http://harishv7.github.io/portfolio\r\n\r\nTo preview your own GitHub portfolio, visit: http://harishv7.github.io/portfolio/?name=YOUR_GITHUB_USERNAME_GOES_HERE. \r\n\r\nBasically add your github username as a query parameter and it will fetch the repo details from your account.\r\n\r\nTo use this and generate your own portfolio page, you can download this repository, and under client/js/app.jsx, specify your username in the first line.\r\nExample: ```var gitHubUserName = \"octocat\";```\r\n\r\nSubsequently, you can test out this page using ```node index.js``` from the root repo dir. This will start up a local server at http://localhost:3000 where you can preview your portfolio page.\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
